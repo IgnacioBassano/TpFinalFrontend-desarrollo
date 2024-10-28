@@ -1,0 +1,24 @@
+/* src/components/pizzas.css */
+.pizzas {
+    padding: 20px;
+  }
+  
+  .lista-pizzas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .pizza-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+  }
+  
+  .pizza-card img {
+    width: 100%;
+    border-radius: 4px;
+  }
+  

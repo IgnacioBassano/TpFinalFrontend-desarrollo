@@ -1,0 +1,13 @@
+/* src/components/detalleTablas.css */
+.detalle-tabla-container {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .detalle-tabla-container img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+  }
+  

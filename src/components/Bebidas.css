@@ -1,0 +1,25 @@
+/* src/components/Bebidas.css */
+
+.bebidas {
+    padding: 20px;
+  }
+  
+  .lista-bebidas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .bebida-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+  }
+  
+  .bebida-card img {
+    width: 100%;
+    height: auto;
+  }
+  

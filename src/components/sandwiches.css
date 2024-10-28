@@ -1,0 +1,24 @@
+/* src/components/sandwiches.css */
+.sandwiches {
+    padding: 20px;
+  }
+  
+  .lista-sandwiches {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .sandwich-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+  }
+  
+  .sandwich-card img {
+    width: 100%;
+    border-radius: 4px;
+  }
+  

@@ -1,0 +1,25 @@
+.hamburguesas {
+  padding: 20px;
+}
+
+.lista-hamburguesas {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hamburguesa-card {
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+.hamburguesa-card img {
+  width: 100px;
+  height: auto;
+}
+
+.detalle-hamburguesa {
+  padding: 20px;
+}

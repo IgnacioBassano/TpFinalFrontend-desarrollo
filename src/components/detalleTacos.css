@@ -1,0 +1,22 @@
+/* src/components/detalleTacos.css */
+.detalle-taco {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .detalle-taco img {
+    width: 300px; /* Ajusta según sea necesario */
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .detalle-taco textarea {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .detalle-taco input {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
