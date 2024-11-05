@@ -1,32 +1,58 @@
-/* src/components/detallePizzas.css */
 .detalle-pizza {
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .detalle-pizza img {
-    width: 300px;
-    border-radius: 8px;
-  }
-  
-  textarea {
-    width: 100%;
-    border-radius: 4px;
-    padding: 8px;
-    margin-top: 10px;
-  }
-  
-  button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    border: none;
-    background-color: #28a745;
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #218838;
-  }
-  
+  padding: 20px;
+  text-align: center;
+  max-width: 600px; 
+  margin: auto; 
+  color: black; 
+}
+
+.imagen-ampliada {
+  width: 100%; 
+  height: auto; 
+  border-radius: 10px; 
+  margin-bottom: 20px; 
+}
+
+.formulario {
+  margin: 10px 0; 
+}
+
+textarea {
+  width: 100%; 
+  border-radius: 5px; 
+  border: 1px solid #ccc; 
+  padding: 10px; 
+  resize: none; 
+}
+
+input[type="number"] {
+  width: 100%;
+  border-radius: 5px; 
+  border: 1px solid #ccc; 
+  padding: 10px; 
+}
+
+.btn-agregar {
+  background-color: #28a745; 
+  color: white; 
+  border: none; 
+  border-radius: 5px; 
+  padding: 10px 20px; 
+  cursor: pointer; 
+  margin-top: 10px; 
+}
+
+.btn-agregar:hover {
+  background-color: #218838; 
+}
+
+.link-volver {
+  display: inline-block; 
+  margin-top: 20px; 
+  text-decoration: none; 
+  color: #007bff; 
+}
+
+.link-volver:hover {
+  text-decoration: underline; 
+}

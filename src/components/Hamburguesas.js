@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Card, CardMedia, CardContent, Typography, Grid } from '@mui/material';
 import './Hamburguesas.css';
 
 function Hamburguesas() {
@@ -9,7 +10,7 @@ function Hamburguesas() {
       nombre: 'Hamburguesa Clásica',
       precio: 500,
       descuento: 10,
-      imagen: 'ruta/a/la/imagen/hamburguesa-clasica.jpg',
+      imagen: 'https://d31npzejelj8v1.cloudfront.net/media/catalog/product/b/a/base-bembos-clasica_1.jpg',
       descripcion: 'Carne de res, lechuga, tomate, cebolla y mayonesa.',
     },
     {
@@ -17,7 +18,7 @@ function Hamburguesas() {
       nombre: 'Hamburguesa Doble Queso',
       precio: 700,
       descuento: 15,
-      imagen: 'ruta/a/la/imagen/hamburguesa-doble-queso.jpg',
+      imagen: 'https://png.pngtree.com/thumb_back/fh260/background/20230615/pngtree-a-photo-big-double-cheddar-cheeseburger-with-chicken-cutlet-image_3108377.jpg',
       descripcion: 'Carne de res, doble queso, lechuga y ketchup.',
     },
     {
@@ -25,7 +26,7 @@ function Hamburguesas() {
       nombre: 'Hamburguesa BBQ',
       precio: 650,
       descuento: 5,
-      imagen: 'ruta/a/la/imagen/hamburguesa-bbq.jpg',
+      imagen: 'https://img.freepik.com/fotos-premium/jugosa-hamburguesa-cerdo-desmenuzado-salsa-bbq_151349-1778.jpg',
       descripcion: 'Carne de res, salsa BBQ, cebolla y queso cheddar.',
     },
     {
@@ -33,7 +34,7 @@ function Hamburguesas() {
       nombre: 'Hamburguesa Picante',
       precio: 600,
       descuento: 20,
-      imagen: 'ruta/a/la/imagen/hamburguesa-picante.jpg',
+      imagen: 'https://vidapicante.com/wp-content/uploads/2023/09/receta-hamburguesa-chipotle.jpg',
       descripcion: 'Carne de res, jalapeños, salsa picante y cebolla.',
     },
     {
@@ -41,7 +42,7 @@ function Hamburguesas() {
       nombre: 'Hamburguesa Vegetariana',
       precio: 550,
       descuento: null,
-      imagen: 'ruta/a/la/imagen/hamburguesa-vegetariana.jpg',
+      imagen: 'https://granvita.com/wp-content/uploads/2024/06/hamburguesas-vegetarianas-recetas.jpg',
       descripcion: 'Hamburguesa de garbanzos, lechuga, tomate y aguacate.',
     },
   ];
@@ -49,24 +50,37 @@ function Hamburguesas() {
   return (
     <div className="hamburguesas">
       <h1>Tipos de Hamburguesas</h1>
-      <div className="lista-hamburguesas">
+      <Grid container spacing={4}>
         {hamburguesasData.map((hamburguesa) => (
-          <div key={hamburguesa.id} className="hamburguesa-card">
-            <Link to={`/hamburguesas/${hamburguesa.id}`}>
-              <img src={hamburguesa.imagen} alt={hamburguesa.nombre} />
-              <h2>{hamburguesa.nombre}</h2>
-              <p>Precio: ${hamburguesa.precio}</p>
-              {hamburguesa.descuento && (
-                <p>
-                  Descuento: {hamburguesa.descuento}%
-                  <br />
-                  Precio con Descuento: ${Math.round(hamburguesa.precio * (1 - hamburguesa.descuento / 100))}
-                </p>
-              )}
-            </Link>
-          </div>
+          <Grid item xs={12} sm={6} md={4} key={hamburguesa.id}>
+            <Card className="hamburguesa-card" elevation={3}>
+              <Link to={`/hamburguesas/${hamburguesa.id}`} style={{ textDecoration: 'none' }}>
+                <CardMedia
+                  component="img"
+                  image={hamburguesa.imagen}
+                  alt={hamburguesa.nombre}
+                  title={hamburguesa.nombre}
+                  style={{ height: 200, objectFit: 'cover' }} 
+                />
+                <CardContent>
+                  <Typography variant="h5" component="h2">{hamburguesa.nombre}</Typography>
+                  <Typography variant="body2" color="textSecondary">
+                    Precio: ${hamburguesa.precio}
+                  </Typography>
+                  {hamburguesa.descuento && (
+                    <Typography variant="body2" color="textSecondary">
+                      Descuento: {hamburguesa.descuento}%
+                      <br />
+                      Precio con Descuento: ${Math.round(hamburguesa.precio * (1 - hamburguesa.descuento / 100))}
+                    </Typography>
+                  )}
+                  <Typography variant="body2">{hamburguesa.descripcion}</Typography>
+                </CardContent>
+              </Link>
+            </Card>
+          </Grid>
         ))}
-      </div>
+      </Grid>
     </div>
   );
 }

@@ -1,4 +1,3 @@
-// src/components/DetalleTablas.js
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import './detalleTablas.css'; 
@@ -10,7 +9,7 @@ const tablasData = [
     precio: 120,
     descuento: 10, 
     descripcion: 'Una deliciosa selección de las mejores carnes.',
-    imagen: 'ruta/a/la/imagen/tabla-carnes.jpg',
+    imagen: 'https://img.freepik.com/fotos-premium/cerrar-variedad-carnes-asadas-tabla-madera_219193-3649.jpg?w=360',
   },
   {
     id: 2,
@@ -18,7 +17,7 @@ const tablasData = [
     precio: 100,
     descuento: null, 
     descripcion: 'Una exquisita selección de quesos variados.',
-    imagen: 'ruta/a/la/imagen/tabla-quesos.jpg',
+    imagen: 'https://images.mrcook.app/recipe-image/0190f02a-e1bc-7ccd-adad-ff4b9d5c638d',
   },
   {
     id: 3,
@@ -26,7 +25,7 @@ const tablasData = [
     precio: 150,
     descuento: 5, 
     descripcion: 'Una combinación de carnes y quesos.',
-    imagen: 'ruta/a/la/imagen/tabla-mixta.jpg',
+    imagen: 'https://www.cashfresh.es/wp-content/uploads/2020/12/Post-23-diciembre-BC-1030x687.jpg',
   },
 ];
 
@@ -54,7 +53,7 @@ function DetalleTablas() {
   const totalPrecio = precioFinal * cantidad;
 
   return (
-    <div className="detalle-tabla">
+    <div className="detalle-tabla-container">
       <h1>{tabla.nombre}</h1>
       <img src={tabla.imagen} alt={tabla.nombre} className="imagen-ampliada" />
       <p>Descripción: {tabla.descripcion}</p>

@@ -1,24 +1,32 @@
-/* src/components/pizzas.css */
 .pizzas {
-    padding: 20px;
-  }
-  
-  .lista-pizzas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  .pizza-card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 10px;
-    text-align: center;
-    width: 200px;
-  }
-  
-  .pizza-card img {
-    width: 100%;
-    border-radius: 4px;
-  }
-  
+  padding: 20px;
+  text-align: center; 
+}
+
+.lista-pizzas {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center; 
+}
+
+.pizza-card {
+  margin: 15px; 
+  border-radius: 10px;
+  overflow: hidden; 
+  transition: transform 0.2s; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.pizza-card:hover {
+  transform: scale(1.05); 
+}
+
+.pizza-card img {
+  width: 100%; 
+  height: 200px; 
+  object-fit: cover; 
+}
+
+.detalle-pizza {
+  padding: 20px; 
+}

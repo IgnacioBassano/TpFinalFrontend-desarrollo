@@ -1,13 +1,24 @@
-/* src/components/detalleTablas.css */
 .detalle-tabla-container {
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .detalle-tabla-container img {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    border-radius: 8px;
-  }
-  
+  padding: 20px;
+  text-align: center;
+}
+
+.detalle-tabla-container img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px; 
+}
+
+.detalle-tabla-container textarea {
+  width: 100%;
+  max-width: 400px; 
+  margin-bottom: 20px; 
+}
+
+.detalle-tabla-container input {
+  width: 100%;
+  max-width: 100px; 
+  margin-bottom: 20px; 
+}

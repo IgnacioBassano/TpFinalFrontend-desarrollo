@@ -1,6 +1,6 @@
-// src/components/DetalleHamburguesa.js
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import './DetalleHamburguesa.css'; 
 
 function DetalleHamburguesa() {
   const { id } = useParams();
@@ -10,7 +10,7 @@ function DetalleHamburguesa() {
       nombre: 'Hamburguesa Clásica',
       precio: 500,
       descuento: 10,
-      imagen: 'ruta/a/la/imagen/hamburguesa-clasica.jpg',
+      imagen: 'https://d31npzejelj8v1.cloudfront.net/media/catalog/product/b/a/base-bembos-clasica_1.jpg',
       descripcion: 'Carne de res, lechuga, tomate, cebolla y mayonesa.',
     },
     {
@@ -18,7 +18,7 @@ function DetalleHamburguesa() {
       nombre: 'Hamburguesa Doble Queso',
       precio: 700,
       descuento: 15,
-      imagen: 'ruta/a/la/imagen/hamburguesa-doble-queso.jpg',
+      imagen: 'https://png.pngtree.com/thumb_back/fh260/background/20230615/pngtree-a-photo-big-double-cheddar-cheeseburger-with-chicken-cutlet-image_3108377.jpg',
       descripcion: 'Carne de res, doble queso, lechuga y ketchup.',
     },
     {
@@ -26,7 +26,7 @@ function DetalleHamburguesa() {
       nombre: 'Hamburguesa BBQ',
       precio: 650,
       descuento: 5,
-      imagen: 'ruta/a/la/imagen/hamburguesa-bbq.jpg',
+      imagen: 'https://img.freepik.com/fotos-premium/jugosa-hamburguesa-cerdo-desmenuzado-salsa-bbq_151349-1778.jpg',
       descripcion: 'Carne de res, salsa BBQ, cebolla y queso cheddar.',
     },
     {
@@ -34,7 +34,7 @@ function DetalleHamburguesa() {
       nombre: 'Hamburguesa Picante',
       precio: 600,
       descuento: 20,
-      imagen: 'ruta/a/la/imagen/hamburguesa-picante.jpg',
+      imagen: 'https://vidapicante.com/wp-content/uploads/2023/09/receta-hamburguesa-chipotle.jpg',
       descripcion: 'Carne de res, jalapeños, salsa picante y cebolla.',
     },
     {
@@ -42,7 +42,7 @@ function DetalleHamburguesa() {
       nombre: 'Hamburguesa Vegetariana',
       precio: 550,
       descuento: null,
-      imagen: 'ruta/a/la/imagen/hamburguesa-vegetariana.jpg',
+      imagen: 'https://granvita.com/wp-content/uploads/2024/06/hamburguesas-vegetarianas-recetas.jpg',
       descripcion: 'Hamburguesa de garbanzos, lechuga, tomate y aguacate.',
     },
   ];
@@ -57,7 +57,6 @@ function DetalleHamburguesa() {
       alert('Las observaciones deben tener al menos 150 caracteres.');
       return;
     }
-    // Aquí puedes implementar la lógica para agregar al carrito
     alert(`Agregaste ${cantidad} ${hamburguesa.nombre} al carrito.`);
   };
 
@@ -74,7 +73,7 @@ function DetalleHamburguesa() {
       <h1>{hamburguesa.nombre}</h1>
       <img src={hamburguesa.imagen} alt={hamburguesa.nombre} className="imagen-ampliada" />
       <p>Descripción: {hamburguesa.descripcion}</p>
-      <div>
+      <div className="formulario">
         <label htmlFor="observaciones">Observaciones:</label>
         <textarea
           id="observaciones"
@@ -85,7 +84,7 @@ function DetalleHamburguesa() {
           placeholder="Escribe tus observaciones aquí..."
         />
       </div>
-      <div>
+      <div className="formulario">
         <label htmlFor="cantidad">Cantidad:</label>
         <input
           type="number"
@@ -97,8 +96,8 @@ function DetalleHamburguesa() {
       </div>
       <p>Precio por Hamburguesa: ${precioFinal}</p>
       <p>Total: ${totalPrecio}</p>
-      <button onClick={handleAddToCart}>Agregar al Carrito</button>
-      <Link to="/hamburguesas">Volver a Hamburguesas</Link>
+      <button onClick={handleAddToCart} className="btn-agregar">Agregar al Carrito</button>
+      <Link to="/hamburguesas" className="link-volver">Volver a Hamburguesas</Link>
     </div>
   );
 }

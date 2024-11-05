@@ -1,4 +1,3 @@
-// src/components/DetalleSandwiches.js
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import './detalleSandwiches.css';
@@ -9,7 +8,7 @@ const sandwichesData = [
     nombre: 'Sandwich de Pollo',
     precio: 500,
     descuento: 10,
-    imagen: 'ruta/a/la/imagen/sandwich-pollo.jpg',
+    imagen: 'https://imag.bonviveur.com/sandwich-de-pollo.jpg',
     descripcion: 'Pan, pechuga de pollo, lechuga, mayonesa.',
   },
   {
@@ -17,7 +16,7 @@ const sandwichesData = [
     nombre: 'Sandwich Vegetariano',
     precio: 450,
     descuento: null,
-    imagen: 'ruta/a/la/imagen/sandwich-vegetariano.jpg',
+    imagen: 'https://file-cdn.mercyforanimals.org/mercy4animals.wpengine.com/sites/446/2019/06/sandwisches-veganos.jpg',
     descripcion: 'Pan, aguacate, tomate, lechuga, hummus.',
   },
   {
@@ -25,7 +24,7 @@ const sandwichesData = [
     nombre: 'Sandwich de Jamón y Queso',
     precio: 480,
     descuento: 5,
-    imagen: 'ruta/a/la/imagen/sandwich-jamon-queso.jpg',
+    imagen: 'https://www.bimbo.es/uploads/11-sandwich-con-queso-lechuga-tomate-mayonesa-y-pechuga-de-pavo-a-las-finas-hierbas.webp',
     descripcion: 'Pan, jamón, queso, mostaza.',
   },
 ];
@@ -47,7 +46,6 @@ function DetalleSandwiches() {
 
   if (!sandwich) return <p>Sandwich no encontrado.</p>;
 
-  // Calcular precio final considerando el descuento
   const precioFinal = sandwich.descuento 
     ? Math.round(sandwich.precio * (1 - sandwich.descuento / 100)) 
     : sandwich.precio;
@@ -59,7 +57,7 @@ function DetalleSandwiches() {
       <h1>{sandwich.nombre}</h1>
       <img src={sandwich.imagen} alt={sandwich.nombre} className="imagen-ampliada" />
       <p>Descripción: {sandwich.descripcion}</p>
-      <div>
+      <div className="formulario">
         <label htmlFor="observaciones">Observaciones:</label>
         <textarea
           id="observaciones"
@@ -70,7 +68,7 @@ function DetalleSandwiches() {
           placeholder="Escribe tus observaciones aquí..."
         />
       </div>
-      <div>
+      <div className="formulario">
         <label htmlFor="cantidad">Cantidad:</label>
         <input
           type="number"
@@ -82,11 +80,10 @@ function DetalleSandwiches() {
       </div>
       <p>Precio por Sandwich: ${precioFinal}</p>
       <p>Total: ${totalPrecio}</p>
-      <button onClick={handleAddToCart}>Agregar al Carrito</button>
-      <Link to="/sandwiches">Volver a Sandwiches</Link>
+      <button onClick={handleAddToCart} className="btn-agregar">Agregar al Carrito</button>
+      <Link to="/sandwiches" className="link-volver">Volver a Sandwiches</Link>
     </div>
   );
 }
 
 export default DetalleSandwiches;
-

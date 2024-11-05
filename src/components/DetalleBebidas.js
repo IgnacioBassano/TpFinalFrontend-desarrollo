@@ -1,4 +1,3 @@
-// src/components/DetalleBebidas.js
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import './detalleBebidas.css';
@@ -9,7 +8,7 @@ const bebidasData = [
     nombre: 'Coca Cola',
     precio: 150,
     descuento: null,
-    imagen: 'ruta/a/la/imagen/coca-cola.jpg',
+    imagen: 'https://atracon.es/wp-content/uploads/2020/10/cola-350-vr.jpg',
     descripcion: 'Refresco de cola.',
   },
   {
@@ -17,7 +16,7 @@ const bebidasData = [
     nombre: 'Sprite',
     precio: 150,
     descuento: 5,
-    imagen: 'ruta/a/la/imagen/sprite.jpg',
+    imagen: 'https://elperri.es/wp-content/uploads/2024/07/sprite.png',
     descripcion: 'Refresco sabor limón-lima.',
   },
   {
@@ -25,7 +24,7 @@ const bebidasData = [
     nombre: 'Agua Mineral',
     precio: 100,
     descuento: null,
-    imagen: 'ruta/a/la/imagen/agua-mineral.jpg',
+    imagen: 'https://hiperlibertad.vtexassets.com/arquivos/ids/222635-800-auto?v=638490729650270000&width=800&height=auto&aspect=true',
     descripcion: 'Agua mineral con gas.',
   },
 ];
@@ -47,7 +46,7 @@ function DetalleBebidas() {
 
   if (!bebida) return <p>Bebida no encontrada.</p>;
 
-  // Calcular precio final considerando el descuento
+  
   const precioFinal = bebida.descuento 
     ? Math.round(bebida.precio * (1 - bebida.descuento / 100)) 
     : bebida.precio;

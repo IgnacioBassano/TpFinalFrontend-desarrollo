@@ -1,31 +1,25 @@
-/* src/components/Tacos.css */
 .tacos {
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .lista-tacos {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-  
-  .taco-card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 10px;
-    margin: 10px;
-    width: 200px; /* Ajusta según sea necesario */
-    transition: transform 0.2s;
-  }
-  
-  .taco-card:hover {
-    transform: scale(1.05);
-  }
-  
-  .taco-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-  
+  padding: 20px;
+  text-align: center;
+}
+
+.taco-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px;
+  width: 250px; 
+  transition: transform 0.2s;
+  background-color: #f9f9f9; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.taco-card:hover {
+  transform: scale(1.05);
+}
+
+.taco-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}

@@ -1,4 +1,3 @@
-// src/components/Inicio.js
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -10,7 +9,7 @@ function Inicio() {
       <h1>Bienvenido al Restaurante</h1>
       <p>Selecciona una opción del menú.</p>
 
-      {/* Botones de categorías */}
+      {}
       <div style={{ margin: '20px 0' }}>
         <button onClick={() => navigate('/hamburguesas')} style={buttonStyle}>
           Hamburguesas
@@ -32,7 +31,7 @@ function Inicio() {
         </button>
       </div>
 
-      {/* Información adicional o productos se puede agregar aquí */}
+      {}
       <div>
         <h2>Nuestras Especialidades</h2>
         <p>Aquí puedes encontrar una variedad de productos deliciosos que ofrecemos.</p>
@@ -41,7 +40,7 @@ function Inicio() {
   );
 }
 
-// Estilos para los botones
+
 const buttonStyle = {
   margin: '10px',
   padding: '10px 20px',

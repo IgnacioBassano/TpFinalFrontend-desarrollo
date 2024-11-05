@@ -1,6 +1,6 @@
-// src/components/Sandwiches.js
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Card, CardMedia, CardContent, Typography, Grid } from '@mui/material';
 import './sandwiches.css';
 
 const sandwichesData = [
@@ -9,7 +9,7 @@ const sandwichesData = [
     nombre: 'Sandwich de Pollo',
     precio: 500,
     descuento: 10,
-    imagen: 'ruta/a/la/imagen/sandwich-pollo.jpg',
+    imagen: 'https://imag.bonviveur.com/sandwich-de-pollo.jpg',
     descripcion: 'Pan, pechuga de pollo, lechuga, mayonesa.',
   },
   {
@@ -17,7 +17,7 @@ const sandwichesData = [
     nombre: 'Sandwich Vegetariano',
     precio: 450,
     descuento: null,
-    imagen: 'ruta/a/la/imagen/sandwich-vegetariano.jpg',
+    imagen: 'https://file-cdn.mercyforanimals.org/mercy4animals.wpengine.com/sites/446/2019/06/sandwisches-veganos.jpg',
     descripcion: 'Pan, aguacate, tomate, lechuga, hummus.',
   },
   {
@@ -25,7 +25,7 @@ const sandwichesData = [
     nombre: 'Sandwich de Jamón y Queso',
     precio: 480,
     descuento: 5,
-    imagen: 'ruta/a/la/imagen/sandwich-jamon-queso.jpg',
+    imagen: 'https://www.bimbo.es/uploads/11-sandwich-con-queso-lechuga-tomate-mayonesa-y-pechuga-de-pavo-a-las-finas-hierbas.webp',
     descripcion: 'Pan, jamón, queso, mostaza.',
   },
 ];
@@ -34,27 +34,38 @@ function Sandwiches() {
   return (
     <div className="sandwiches">
       <h1>Tipos de Sandwiches</h1>
-      <div className="lista-sandwiches">
+      <Grid container spacing={4}>
         {sandwichesData.map((sandwich) => (
-          <div key={sandwich.id} className="sandwich-card">
-            <Link to={`/sandwiches/${sandwich.id}`}>
-              <img src={sandwich.imagen} alt={sandwich.nombre} />
-              <h2>{sandwich.nombre}</h2>
-              <p>Precio: ${sandwich.precio}</p>
-              {sandwich.descuento && (
-                <p>
-                  Descuento: {sandwich.descuento}%
-                  <br />
-                  Precio con Descuento: ${Math.round(sandwich.precio * (1 - sandwich.descuento / 100))}
-                </p>
-              )}
-            </Link>
-          </div>
+          <Grid item xs={12} sm={6} md={4} key={sandwich.id}>
+            <Card className="sandwich-card" elevation={3}>
+              <Link to={`/sandwiches/${sandwich.id}`} style={{ textDecoration: 'none' }}>
+                <CardMedia
+                  component="img"
+                  image={sandwich.imagen}
+                  alt={sandwich.nombre}
+                  title={sandwich.nombre}
+                  style={{ height: 200, objectFit: 'cover' }}
+                />
+                <CardContent>
+                  <Typography variant="h5" component="h2">{sandwich.nombre}</Typography>
+                  <Typography variant="body2" color="textSecondary">
+                    Precio: ${sandwich.precio}
+                  </Typography>
+                  {sandwich.descuento && (
+                    <Typography variant="body2" color="textSecondary">
+                      Descuento: {sandwich.descuento}%<br />
+                      Precio con Descuento: ${Math.round(sandwich.precio * (1 - sandwich.descuento / 100))}
+                    </Typography>
+                  )}
+                  <Typography variant="body2" style={{ marginTop: '8px' }}>{sandwich.descripcion}</Typography>
+                </CardContent>
+              </Link>
+            </Card>
+          </Grid>
         ))}
-      </div>
+      </Grid>
     </div>
   );
 }
 
 export default Sandwiches;
-

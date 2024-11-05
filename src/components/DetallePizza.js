@@ -1,53 +1,47 @@
-// src/components/DetallePizzas.js
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import './detallePizzas.css';
+import './detallePizzas.css'; 
 
-const pizzasData = [
-  {
-    id: 1,
-    nombre: 'Pizza Margherita',
-    precio: 800,
-    descuento: 10,
-    imagen: 'ruta/a/la/imagen/pizza-margherita.jpg',
-    descripcion: 'Salsa de tomate, mozzarella, albahaca.',
-  },
-  {
-    id: 2,
-    nombre: 'Pizza Pepperoni',
-    precio: 900,
-    descuento: 15,
-    imagen: 'ruta/a/la/imagen/pizza-pepperoni.jpg',
-    descripcion: 'Salsa de tomate, mozzarella, pepperoni.',
-  },
-  {
-    id: 3,
-    nombre: 'Pizza Cuatro Quesos',
-    precio: 950,
-    descuento: 5,
-    imagen: 'ruta/a/la/imagen/pizza-cuatro-quesos.jpg',
-    descripcion: 'Mozzarella, gorgonzola, parmesano y queso de cabra.',
-  },
-  {
-    id: 4,
-    nombre: 'Pizza Vegetariana',
-    precio: 850,
-    descuento: 20,
-    imagen: 'ruta/a/la/imagen/pizza-vegetariana.jpg',
-    descripcion: 'Salsa de tomate, mozzarella, pimientos, cebolla, aceitunas.',
-  },
-  {
-    id: 5,
-    nombre: 'Pizza BBQ Pollo',
-    precio: 950,
-    descuento: null,
-    imagen: 'ruta/a/la/imagen/pizza-bbq-pollo.jpg',
-    descripcion: 'Pollo, salsa BBQ, mozzarella, cebolla morada.',
-  },
-];
-
-function DetallePizzas() {
+function DetallePizza() {
   const { id } = useParams();
+  const pizzasData = [
+    {
+      id: 1,
+      nombre: 'Pizza Margarita',
+      precio: 500,
+      imagen: 'https://www.clarin.com/img/2023/08/01/SL3EslnOA_1200x630__1.jpg',
+      descripcion: 'Salsa de tomate, mozzarella, albahaca fresca.',
+    },
+    {
+      id: 2,
+      nombre: 'Pizza Pepperoni',
+      precio: 700,
+      imagen: 'https://i.blogs.es/ef28b9/como-hacer-pizza-de-pepperoni-1-/1366_2000.jpg',
+      descripcion: 'Salsa de tomate, mozzarella y rodajas de pepperoni.',
+    },
+    {
+      id: 3,
+      nombre: 'Pizza Cuatro Quesos',
+      precio: 650,
+      imagen: 'https://img.freepik.com/fotos-premium/pizza-cuatro-quesos-sobre-fondo-decorado_219193-5948.jpg',
+      descripcion: 'Mozzarella, gorgonzola, parmesano y ricotta.',
+    },
+    {
+      id: 4,
+      nombre: 'Pizza Vegetariana',
+      precio: 600,
+      imagen: 'https://yayaya.com.ec/wp-content/uploads/2021/07/pizza-vegetariana.jpg',
+      descripcion: 'Salsa de tomate, mozzarella, pimientos, cebolla y champiñones.',
+    },
+    {
+      id: 5,
+      nombre: 'Pizza BBQ',
+      precio: 550,
+      imagen: 'https://www.hopkinsmedicine.org/-/media/images/health/3_-wellness/food-and-nutrition/buffalo-chicken-pizza-recipe-hero.jpg?h=500&iar=0&mh=500&mw=1300&w=1295&hash=F90EA46680CD5881F038C257A79313D5',
+      descripcion: 'Salsa BBQ, pollo, cebolla y mozzarella.',
+    },
+  ];
+
   const pizza = pizzasData.find(p => p.id === parseInt(id));
 
   const [cantidad, setCantidad] = useState(1);
@@ -63,11 +57,7 @@ function DetallePizzas() {
 
   if (!pizza) return <p>Pizza no encontrada.</p>;
 
-  // Calcular precio final considerando el descuento
-  const precioFinal = pizza.descuento 
-    ? Math.round(pizza.precio * (1 - pizza.descuento / 100)) 
-    : pizza.precio;
-
+  const precioFinal = pizza.precio; 
   const totalPrecio = precioFinal * cantidad;
 
   return (
@@ -75,7 +65,7 @@ function DetallePizzas() {
       <h1>{pizza.nombre}</h1>
       <img src={pizza.imagen} alt={pizza.nombre} className="imagen-ampliada" />
       <p>Descripción: {pizza.descripcion}</p>
-      <div>
+      <div className="formulario">
         <label htmlFor="observaciones">Observaciones:</label>
         <textarea
           id="observaciones"
@@ -86,7 +76,7 @@ function DetallePizzas() {
           placeholder="Escribe tus observaciones aquí..."
         />
       </div>
-      <div>
+      <div className="formulario">
         <label htmlFor="cantidad">Cantidad:</label>
         <input
           type="number"
@@ -98,10 +88,10 @@ function DetallePizzas() {
       </div>
       <p>Precio por Pizza: ${precioFinal}</p>
       <p>Total: ${totalPrecio}</p>
-      <button onClick={handleAddToCart}>Agregar al Carrito</button>
-      <Link to="/pizzas">Volver a Pizzas</Link>
+      <button onClick={handleAddToCart} className="btn-agregar">Agregar al Carrito</button>
+      <Link to="/pizzas" className="link-volver">Volver a Pizzas</Link>
     </div>
   );
 }
 
-export default DetallePizzas;
+export default DetallePizza;

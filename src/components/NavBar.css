@@ -1,14 +1,13 @@
-/* src/components/NavBar.css */
 .menu {
-  display: block; /* Asegúrate de que se muestre */
-  position: absolute; /* Posición del menú */
-  background: white; /* Color de fondo */
-  border: 1px solid #ccc; /* Bordes */
-  z-index: 1000; /* Asegúrate de que el menú esté por encima de otros elementos */
+  display: block; 
+  position: absolute; 
+  background: white; 
+  border: 1px solid #ccc; 
+  z-index: 1000; 
 }
 
 .menu a {
-  display: block; /* Cada enlace en una nueva línea */
-  padding: 10px; /* Espaciado interno */
-  text-decoration: none; /* Sin subrayado */
+  display: block; 
+  padding: 10px; 
+  text-decoration: none; 
 }

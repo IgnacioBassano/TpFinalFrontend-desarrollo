@@ -1,11 +1,10 @@
-/* src/components/detalleTacos.css */
 .detalle-taco {
     padding: 20px;
     text-align: center;
   }
   
   .detalle-taco img {
-    width: 300px; /* Ajusta según sea necesario */
+    width: 300px; 
     height: auto;
     border-radius: 8px;
   }

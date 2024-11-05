@@ -1,25 +1,36 @@
-/* src/components/Bebidas.css */
+
 
 .bebidas {
-    padding: 20px;
-  }
-  
-  .lista-bebidas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
+  padding: 20px;
+}
+
+.lista-bebidas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.bebida-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  width: 200px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.bebida-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+}
+
+.bebida-card img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 600px) {
   .bebida-card {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    text-align: center;
-    width: 200px;
+    width: 100%; 
   }
-  
-  .bebida-card img {
-    width: 100%;
-    height: auto;
-  }
-  
+}

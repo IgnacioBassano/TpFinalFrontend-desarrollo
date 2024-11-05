@@ -1,4 +1,3 @@
-// src/components/DetalleTacos.js
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import './detalleTacos.css';
@@ -9,7 +8,7 @@ const tacosData = [
     nombre: 'Taco de Ternera',
     precio: 400,
     descuento: 10, 
-    imagen: 'ruta/a/la/imagen/taco-ternera.jpg',
+    imagen: 'https://img.freepik.com/fotos-premium/taco-ternera-recien-asado-sobre-tabla-cortar-madera-rustica_670382-147766.jpg',
     descripcion: 'Taco de carne de ternera con cebolla y cilantro.',
   },
   {
@@ -17,7 +16,7 @@ const tacosData = [
     nombre: 'Taco de Pollo',
     precio: 350,
     descuento: 15, 
-    imagen: 'ruta/a/la/imagen/taco-pollo.jpg',
+    imagen: 'https://assets.unileversolutions.com/recipes-v2/234747.jpg',
     descripcion: 'Taco de pollo asado con salsa y vegetales.',
   },
 ];
@@ -39,7 +38,7 @@ function DetalleTacos() {
 
   if (!taco) return <p>Taco no encontrado.</p>;
 
-  // Calcular precio final considerando el descuento
+
   const precioFinal = taco.descuento 
     ? Math.round(taco.precio * (1 - taco.descuento / 100)) 
     : taco.precio;

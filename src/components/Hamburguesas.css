@@ -1,23 +1,30 @@
 .hamburguesas {
   padding: 20px;
+  text-align: center; 
 }
 
 .lista-hamburguesas {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; 
+  justify-content: center; 
 }
 
 .hamburguesa-card {
-  margin: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  text-align: center;
+  margin: 15px; 
+  border-radius: 10px; 
+  overflow: hidden; 
+  transition: transform 0.2s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.hamburguesa-card:hover {
+  transform: scale(1.05); 
 }
 
 .hamburguesa-card img {
-  width: 100px;
-  height: auto;
+  width: 100%; 
+  height: 200px; 
+  object-fit: cover; 
 }
 
 .detalle-hamburguesa {

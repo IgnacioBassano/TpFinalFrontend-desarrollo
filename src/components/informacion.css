@@ -1,0 +1,12 @@
+.informacion-container {
+    background-image: url('https://img.freepik.com/foto-gratis/espacio-diseno-papel-textura-fondo_53876-42776.jpg'); 
+    background-size: cover;
+    background-position: center;
+    padding: 20px; 
+  }
+  
+  .informacion-card {
+    background-color: rgba(255, 255, 255, 0.9); 
+    padding: 20px;
+    border-radius: 10px; 
+  }

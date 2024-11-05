@@ -1,31 +1,65 @@
-// src/components/NavBar.js
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import './NavBar.css'; 
+import { AppBar, Toolbar, IconButton, Typography, Menu, MenuItem } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
 
-function NavBar({ onSearch }) {
-  const [menuVisible, setMenuVisible] = useState(false);
+function NavBar() {
+  const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const toggleMenu = () => setMenuVisible(!menuVisible);
+  const handleMenuOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
-    <header>
-      <button onClick={toggleMenu} aria-expanded={menuVisible} aria-label="Abrir menú">
-        ☰
-      </button>
-      {menuVisible && (
-        <div className="menu" role="menu">
-          <Link to="/" onClick={() => setMenuVisible(false)}>Inicio</Link>
-          <Link to="/informacion" onClick={() => setMenuVisible(false)}>Información</Link>
-          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" onClick={() => setMenuVisible(false)}>
-            Instagram
-          </a>
-          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" onClick={() => setMenuVisible(false)}>
-            Facebook
-          </a>
-        </div>
-      )}
-    </header>
+    <AppBar position="static">
+      <Toolbar style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <IconButton
+          edge="start"
+          color="inherit"
+          aria-label="menu"
+          onClick={handleMenuOpen}
+        >
+          <MenuIcon />
+        </IconButton>
+
+        <Typography 
+          variant="h6" 
+          sx={{ 
+            flexGrow: 1, 
+            fontFamily: 'cursive', 
+            fontSize: '1.8rem', 
+            fontWeight: 'bold', 
+            color: '#FFFFFF', 
+            textAlign: 'center',
+          }}
+        >
+          Food-Truck
+        </Typography>
+
+        <Menu
+          anchorEl={anchorEl}
+          open={Boolean(anchorEl)}
+          onClose={handleMenuClose}
+        >
+          <MenuItem onClick={handleMenuClose}>
+            <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>Inicio</Link>
+          </MenuItem>
+          <MenuItem onClick={handleMenuClose}>
+            <Link to="/informacion" style={{ textDecoration: 'none', color: 'inherit' }}>Información</Link>
+          </MenuItem>
+          <MenuItem onClick={handleMenuClose}>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>Instagram</a>
+          </MenuItem>
+          <MenuItem onClick={handleMenuClose}>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>Facebook</a>
+          </MenuItem>
+        </Menu>
+      </Toolbar>
+    </AppBar>
   );
 }
 
